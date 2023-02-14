@@ -1,7 +1,7 @@
 package gulas.saveli.library4.UserPackage.User;
 
-import com.example.libraryEntitiesAndDbManager.LibraryContentsPackage.Book.Book;
-import com.example.libraryEntitiesAndDbManager.UserPackage.Role.Role;
+import gulas.saveli.library4.LibraryContentsPackage.Book.Book;
+import gulas.saveli.library4.UserPackage.Role.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
