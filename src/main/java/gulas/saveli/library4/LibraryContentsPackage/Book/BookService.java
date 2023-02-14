@@ -1,23 +1,32 @@
 package gulas.saveli.library4.LibraryContentsPackage.Book;
 
-import com.example.libraryEntitiesAndDbManager.Interfaces.LibraryService;
+import gulas.saveli.library4.Interfaces.LibraryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Optional;
 
+@Service
 public class BookService implements LibraryService<Book> {
+    private final BookRepository bookRepository;
+    @Autowired
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
     @Override
     public Collection<Book> getAll() {
-        return null;
+        return bookRepository.findAll();
     }
 
     @Override
-    public Optional<Book> getById(Long id) {
-        return Optional.empty();
+    public Book getById(Long bookId) {
+        return bookRepository.findById(bookId)
+                .orElseThrow(() -> new IllegalStateException("Book with id " + bookId + " does not exist"));
     }
 
     @Override
-    public String saveOrUpdate(Book o) {
+    public Book save(Book Book) {
         return null;
     }
 
