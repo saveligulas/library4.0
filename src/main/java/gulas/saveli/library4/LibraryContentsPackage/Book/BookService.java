@@ -26,12 +26,20 @@ public class BookService implements LibraryService<Book> {
     }
 
     @Override
-    public Book save(Book Book) {
-        return null;
+    public Book save(Book book) {
+        Optional<Book> bookOptional = bookRepository.findBookByName(book.getName());
+        if(bookOptional.isPresent()) {
+            throw new IllegalStateException("Book with name " + book.getName() + " already exists");
+        }
+        bookRepository.save(book);
     }
 
     @Override
-    public String deleteById(Long id) {
-        return null;
+    public Object deleteById(Long id) {
+        if(!bookRepository.existsById(id)) {
+            throw new IllegalStateException("Book with id " + id + " does not exist");
+        }
+        bookRepository.deleteById(id);
+        return "book deleted successfully";
     }
 }
