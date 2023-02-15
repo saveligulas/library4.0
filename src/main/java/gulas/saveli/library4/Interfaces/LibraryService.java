@@ -7,5 +7,5 @@ public interface LibraryService<Object> {
     public Collection<Object> getAll();
     public Object getById(Long id);
     public Object save(Object o);
-    public String deleteById(Long id);
+    public Object deleteById(Long id);
 }
