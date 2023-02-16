@@ -23,4 +23,8 @@ public class Role {
             fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<User> users;
 
+    public Role(RoleEnum roleEnum) {
+        this.name = roleEnum.name().toLowerCase();
+        this.roleEnum = roleEnum;
+    }
 }
