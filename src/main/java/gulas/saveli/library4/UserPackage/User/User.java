@@ -21,6 +21,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String userName;
+    private String password;
     private String email;
     private LocalDate dob;
     @ManyToOne
@@ -30,10 +31,11 @@ public class User {
             fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Book> books;
 
-    public User(String firstName, String lastName, String email, LocalDate dob) {
+    public User(String firstName, String lastName, String email, String password, LocalDate dob) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.password = password;
         this.dob = dob;
         this.userName = firstName.substring(0,1).toLowerCase() + String.valueOf(dob.getYear()) + lastName.substring(0, 1).toLowerCase();
     }
