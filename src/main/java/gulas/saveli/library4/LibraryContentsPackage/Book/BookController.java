@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping(path = "api/v1/book")
+@RequestMapping(path = "api/book")
 public class BookController implements LibraryController<Book> {
     private final BookService bookService;
     private final BookRepository bookRepository;
@@ -33,11 +33,12 @@ public class BookController implements LibraryController<Book> {
     @PostMapping
     @Override
     public void registerNewObject(@RequestBody Book book) {
-        bookService.s
+        bookService.save(book);
     }
 
+    @DeleteMapping("{bookId}")
     @Override
-    public void deleteById(Long id) {
-
+    public void deleteById(@PathVariable("bookId") Long bookId) {
+        bookService.deleteById(bookId);
     }
 }
