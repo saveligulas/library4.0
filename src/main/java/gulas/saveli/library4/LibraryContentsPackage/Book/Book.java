@@ -1,9 +1,9 @@
 package gulas.saveli.library4.LibraryContentsPackage.Book;
 
-import com.example.libraryEntitiesAndDbManager.LibraryContentsPackage.Author.Author;
-import com.example.libraryEntitiesAndDbManager.LibraryContentsPackage.Genre.Genre;
-import com.example.libraryEntitiesAndDbManager.LibraryContentsPackage.Publisher.Publisher;
-import com.example.libraryEntitiesAndDbManager.UserPackage.User.User;
+import gulas.saveli.library4.LibraryContentsPackage.Author.Author;
+import gulas.saveli.library4.LibraryContentsPackage.Genre.Genre;
+import gulas.saveli.library4.LibraryContentsPackage.Publisher.Publisher;
+import gulas.saveli.library4.UserPackage.User.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
