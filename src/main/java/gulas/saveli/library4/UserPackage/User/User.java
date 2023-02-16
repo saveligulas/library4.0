@@ -20,6 +20,7 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
+    private String userName;
     private String email;
     private LocalDate dob;
     @ManyToOne
@@ -28,4 +29,12 @@ public class User {
     @OneToMany(targetEntity = Book.class, mappedBy = "user",
             fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Book> books;
+
+    public User(String firstName, String lastName, String email, LocalDate dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.dob = dob;
+        this.userName = firstName.substring(0,1).toLowerCase() + String.valueOf(dob.getYear()) + lastName.substring(0, 1).toLowerCase();
+    }
 }
