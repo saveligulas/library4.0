@@ -18,6 +18,7 @@ public class Role {
     @GeneratedValue
     private Long id;
     private String name;
+    private RoleEnum roleEnum;
     @OneToMany(targetEntity = User.class, mappedBy = "role",
             fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<User> users;
