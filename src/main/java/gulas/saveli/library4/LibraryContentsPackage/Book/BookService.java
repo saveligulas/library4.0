@@ -32,14 +32,15 @@ public class BookService implements LibraryService<Book> {
             throw new IllegalStateException("Book with name " + book.getName() + " already exists");
         }
         bookRepository.save(book);
+        return book;
     }
 
     @Override
-    public Object deleteById(Long id) {
+    public Book deleteById(Long id) {
         if(!bookRepository.existsById(id)) {
             throw new IllegalStateException("Book with id " + id + " does not exist");
         }
         bookRepository.deleteById(id);
-        return "book deleted successfully";
+        return null;
     }
 }
