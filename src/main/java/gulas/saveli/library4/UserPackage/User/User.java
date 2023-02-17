@@ -20,6 +20,7 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
+    private String name;
     private String userName;
     private String password;
     private String email;
@@ -34,6 +35,7 @@ public class User {
     public User(String firstName, String lastName, String email, String password, LocalDate dob) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.name = firstName + " " + lastName;
         this.email = email;
         this.password = password;
         this.dob = dob;
