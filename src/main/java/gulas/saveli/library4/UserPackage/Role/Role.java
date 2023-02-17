@@ -24,7 +24,7 @@ public class Role {
     private Set<User> users;
 
     public Role(RoleEnum roleEnum) {
-        this.name = roleEnum.name().toLowerCase();
+        this.name = roleEnum.name();
         this.roleEnum = roleEnum;
     }
 }
